@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Стилизатор</title>
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-5.3.3-dist/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <!-- Здесь включается тёмная тема, чтобы текст отображался белым -->
+    <nav class="navbar navbar-expand sticky-top bg-primary" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Стилизатор</a>
+        </div>
+    </nav>
+    <main class="my-3">
+        <div class="container">
+            <div class="row g-5">
+                <section class="col-md-6">
+                    <!-- Флекс нужен для того, чтобы правильно расширять поле ввода -->
+                    <form class="d-flex flex-column h-100" method="post" onsubmit="makeButtonBusy(mainFormBtn)">
+                        {% csrf_token %}
+                        <label>{{ datetime }}</label>
+                        <!-- Этот тег *должен* быть записан в одну строку -->
+                        <textarea name="text" class="form-control" placeholder="Введите текст">{{ textareatext }}</textarea>
+                        <button id="mainFormBtn" type="submit" class="btn btn-success mt-3">
+                            <!-- span нужен для небольшого отступа от колеса загрузки -->
+                            <span>Проверить</span>
+                        </button>
+                    </form>
+                </section>
+                <section class="col-md-6">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="style-tab" data-bs-toggle="tab" data-bs-target="#style-tab-pane">
+                                Стилистика
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="stat-tab" data-bs-toggle="tab" data-bs-target="#stat-tab-pane">
+                                Статистика
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="stat-tab" data-bs-toggle="tab" data-bs-target="#error-tab-pane">
+                                Замечания
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content tabs-lvl-1">
+                        <div class="tab-pane tabs-div fade show active" id="style-tab-pane">
+                            <p>
+                                {% autoescape off %}
+                                {{ analyze_style }}
+                                {% endautoescape %}
+                            </p>
+                        </div>
+                        <div class="tab-pane tabs-div fade" id="stat-tab-pane">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <button class="nav-link active" id="lexic-tab" data-bs-toggle="tab" data-bs-target="#lexic-tab-pane">
+                                        Лексика
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="morph-tab" data-bs-toggle="tab" data-bs-target="#morph-tab-pane">
+                                        Морфология
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="syntax-tab" data-bs-toggle="tab" data-bs-target="#syntax-tab-pane">
+                                        Синтаксис
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content tabs-lvl-2">
+                                <div class="tab-pane tabs-div txt fade show active" id="lexic-tab-pane">
+                                    {% autoescape off %}
+                                    {{ result_of_lexic_analyze }}
+                                    {% endautoescape %}
+                                </div>
+                                <div class="tab-pane tabs-div txt fade" id="morph-tab-pane">
+                                    {% autoescape off %}
+                                    {{ result_of_morph_analyze }}
+                                    {% endautoescape %}
+                                </div>
+                                <div class="tab-pane tabs-div txt fade" id="syntax-tab-pane">
+                                    {% autoescape off %}
+                                    {{ result_of_syntax_analyze }}
+                                    {% endautoescape %}
+                                </div>
+                            </div>        
+                        </div>
+                        <div class="tab-pane tabs-div fade" id="error-tab-pane">
+                            <p>
+                                {% autoescape off %}
+                                {{ errors }}
+                                {% endautoescape %}
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row row-cols-2">
+                <section class="py-2 text-start">
+                    Система анализа стиля текста<br>
+                    Работает на <a href="https://www.djangoproject.com">Django</a>
+                </section>
+                <section class="py-2 text-end">
+                    Разработчик: <a href="https://github.com/AnnaKoval1234">AnnaKoval1234</a><br>
+                    2024
+                </section>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static "bootstrap-5.3.3-dist/js/bootstrap.min.js" %}"></script>
+    <script>
+
+        // Добавить к кнопке колесико загрузки и отключить её
+        function makeButtonBusy (element)
+        {
+            let spin = document.createElement("span");
+            spin.id = element.id + "Spinner";
+            spin.className = "spinner-border spinner-border-sm";
+
+            element.prepend(spin);
+            element.disabled = true;
+        }
+
+        // Убрать с кнопки колесико загрузки и включить её
+        function makeButtonFree (element)
+        {
+            let icon = document.getElementById(element.id + "Spinner");
+            icon.remove();
+
+            element.disabled = false;
+        }
+
+    </script>
+</body>
+</html>

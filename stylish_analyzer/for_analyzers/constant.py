@@ -1,0 +1,355 @@
+# стили
+CONVERSATIONAL = "разговорный"
+BELLES_LETTRES = "художественный"
+OFFICIAL = "официально-деловой"
+OFFICIAL_RED = "офиц.-деловой"
+SCIENTIFIC = "научный"
+SCIENTIFIC_TECH = "научно-технический"
+SCIENTIFIC_PUB = "научно-популярный"
+PUBLICISTIC = "публицистический"
+PUBLICISTIC_IDEA = "политико-идеологический"
+IDEOLOGICAL = "идеологический"
+RELIGIOUS = "религиозный"
+CONVERSE_PUB = "публицистический/разговорный"
+SCIENCE_OFF = "научный/официально-деловой"
+
+STYLE_SET = {CONVERSATIONAL, BELLES_LETTRES, OFFICIAL, SCIENTIFIC, PUBLICISTIC, CONVERSE_PUB, SCIENCE_OFF}
+
+# части речи
+NOUN = "NOUN"
+ADJF = "ADJF"
+ADJS = "ADJS"
+COMP = "COMP"
+VERB = "VERB"
+INFN = "INFN"
+PRTF = "PRTF"
+PRTS = "PRTS"
+GRND = "GRND"
+NUMR = "NUMR"
+ADVB = "ADVB"
+NPRO = "NPRO"
+PRED = "PRED"
+PREP = "PREP"
+CONJ = "CONJ"
+PRCL = "PRCL"
+INTJ = "INTJ"
+X = "X"
+LATN = "LATN"
+PNCT = "PNCT"
+NUMB = "NUMB"
+ROMN = "ROMN"
+UNKN = "UNKN"
+
+# части речи на русском
+NOUN_RU = "СУЩЕСТВИТЕЛЬНЫЕ"
+ADJF_RU = "ПРИЛАГАТЕЛЬНЫЕ"
+ADJS_RU = "КРАТКИЕ ПРИЛАГАТЕЛЬНЫЕ"
+COMP_RU = "КОМПАРАТИВЫ"
+VERB_RU = "ГЛАГОЛЫ"
+INFN_RU = "ИНФИНИТИВЫ"
+PRTF_RU = "ПРИЧАСТИЯ"
+PRTS_RU = "КРАТКИЕ ПРИЧАСТИЯ"
+GRND_RU = "ДЕЕПРИЧАСТИЯ"
+NUMR_RU = "ЧИСЛИТЕЛЬНЫЕ"
+ADVB_RU = "НАРЕЧИЯ"
+NPRO_RU = "МЕСТОИМЕНИЯ"
+PRED_RU = "ПРЕДИКАТИВЫ"
+PREP_RU = "ПРЕДЛОГИ"
+CONJ_RU = "СОЮЗЫ"
+PRCL_RU = "ЧАСТИЦЫ"
+INTJ_RU = "МЕЖДОМЕТИЯ"
+X_RU = "ДРУГОЕ"
+LATN_RU = "ЛАТ"
+PNCT_RU = "ЗПР"
+NUMB_RU = "ЧИСЛО"
+ROMN_RU = "РИМ"
+UNKN_RU = "НЕРАСПОЗНАННОЕ"
+
+# грамматические категории
+CASE = "падеж"
+GENDER = "род"
+NUMBER = "число"
+ANIMACY = "одушевлённость"
+PERSON = "лицо"
+ASPECT = "вид"
+TRANSITIVITY = "переходность"
+TENSE = "время"
+INVOLVEMENT = "совместность"
+MOOD = "наклонение"
+VOICE = "залог"
+LABELS = "метки"
+
+# падеж
+NOMN = "nomn"
+GENT = "gent"
+DATV = "datv"
+ACCS = "accs"
+ABLT = "ablt"
+LOCT = "loct"
+VOCT = "voct"
+GEN2 = "gen2"
+ACC2 = "acc2"
+LOC2 = "loc2"
+# падеж на русском
+NOMN_RU = "им"
+GENT_RU = "рд"
+DATV_RU = "дт"
+ACCS_RU = "вн"
+ABLT_RU = "тв"
+LOCT_RU = "пр"
+VOCT_RU = "зв"
+GEN2_RU = "рд2"
+ACC2_RU = "вн2"
+LOC2_RU = "пр2"
+
+# род
+MASC = "masc"
+FEMN = "femn"
+NEUT = "neut"
+# род на русском
+MASC_RU = "мр"
+FEMN_RU = "жр"
+NEUT_RU = "ср"
+
+# число
+SING = "sing"
+PLUR = "plur"
+# число на русском
+SING_RU = "ед"
+PLUR_RU = "мн"
+
+# одушевлённость
+ANIM = "anim"
+INAN = "inan"
+# одушевлённость на русском
+ANIM_RU = "од"
+INAN_RU = "неод"
+
+# лицо
+PER1 = "1per"
+PER2 = "2per"
+PER3 = "3per"
+# лицо на русском
+PER1_RU = "1л"
+PER2_RU = "2л"
+PER3_RU = "3л"
+
+# вид
+PERF = "perf"
+IMPF = "impf"
+# вид на русском
+PERF_RU = "сов"
+IMPF_RU = "несов"
+
+# переходность
+TRAN = "tran"
+INTR = "intr"
+# переходность на русском
+TRAN_RU = "перех"
+INTR_RU = "неперех"
+
+# время
+PRES = "pres"
+PAST = "past"
+FUTR = "futr"
+# время на русском
+PRES_RU = "наст"
+PAST_RU = "прош"
+FUTR_RU = "буд" 
+
+# совместность
+INCL = "incl"
+EXCL = "excl"
+# совместность на русском
+INCL_RU = "вкл"
+EXCL_RU = "выкл"
+
+# наклонение
+INDC = "indc"
+IMPR = "impr"
+# наклонение на русском
+INDC_RU = "изъяв"
+IMPR_RU = "повел"
+
+# залог
+ACTV = "actv"
+PSSV = "pssv"
+# залог на русском
+ACTV_RU = "действ"
+PSSV_RU = "страд"
+
+# метки
+MSF = "ms-f"
+GNDR = "GNdr"
+SGTM = "Sgtm"
+PLTM = "Pltm"
+FIXD = "Fixd"
+INMX = "Inmx"
+COUN = "Coun"
+SUBX = "Subx"
+SUPR = "Supr"
+QUAL = "Qual"
+APRO = "Apro"
+ANUM = "Anum"
+POSS = "Poss"
+ANPH = "Anph"
+ADJX = "Adjx"
+CMP2 = "Cmp2"
+VEJ = "V-ej"
+QUES = "Ques"
+DMNS = "Dmns"
+COLL = "Coll"
+REFL = "Refl"
+MULT = "Mult"
+IMPE = "Impe"
+IMPX = "Impx"
+FIMP = "Fimp"
+PRDX = "Prdx"
+PRNT = "Prnt"
+
+# метки на русском
+MSF_RU = "мж"
+GNDR_RU = "хр"
+SGTM_RU = "sg"
+PLTM_RU = "pl"
+FIXD_RU = "0"
+INMX_RU = "безл?"
+COUN_RU = "счетн"
+SUBX_RU = "субст?"
+SUPR_RU = "превосх"
+QUAL_RU = "кач"
+APRO_RU = "мест-п"
+ANUM_RU = "числ-п"
+POSS_RU = "притяж"
+ANPH_RU = "анаф"
+ADJX_RU = "прил?"
+CMP2_RU = "сравн2"
+VEJ_RU = "*ей"
+QUES_RU = "вопр"
+DMNS_RU = "указ"
+COLL_RU = "собир"
+REFL_RU = "возвр"
+MULT_RU = "мног"
+IMPE_RU = "безл"
+IMPX_RU = "безл?"
+FIMP_RU = "*несов"
+PRDX_RU = "предк?"
+PRNT_RU = "вводн"
+
+# члены предложения
+ROOT = "root"
+ACL = "acl"
+ACL_RELCL = "acl:relcl"
+ADVCL = "advcl"
+XCOMP = "xcomp"
+CCOMP = "ccomp"
+AUX = "aux"
+AUX_PASS = "aux:pass"
+COP = "cop"
+PARATAXIS = "parataxis"
+NSUBJ = "nsubj"
+NSUBJ_PASS = "nsubj:pass"
+CSUBJ = "csubj"
+CSUBJ_PASS = "csubj:pass"
+APPOS = "appos"
+NUMMOD = "nummod"
+NUMMOD_GOV = "nummod:gov"
+NUMMOD_ENTITY = "nummod:entity"
+OBJ = "obj"
+IOBJ = "iobj"
+ADVMOD = "advmod"
+OBL = "obl"
+OBL_AGENT = "obl:agent"
+AMOD = "amod"
+DET = "det"
+NMOD = "nmod"
+CONJ_REL = "conj"
+DISLOCATED = "dislocated"
+EXPL = "expl"
+MARK = "mark"
+CC = "cc"
+CASE_REL = "case"
+FIXED = "fixed"
+VOCATIVE = "vocative"
+DISCOURSE = "discourse"
+FLAT = "flat"
+LIST = "list"
+COMPOUND = "compound"
+ORPHAN = "orphan"
+GOESWITH = "goeswith"
+REPARANDUM = "reparandum"
+PUNCT = "punct"
+DEP = "dep"
+
+# виды предложений
+BY_PURPOSE = "по цели высказывания"
+BY_INTONATION = "по интонации"
+BY_GRAMM_BASIS_NUM = "по количеству грамматических основ"
+BY_COMPLEX_TYPE = "по виду связи в сложных предложениях"
+BY_COMPLICATION = "по осложненности"
+BY_GRAMM_BASIS_STRUCT = "по строению грамматических основ"
+BY_PREVALENCE = "по распространенности"
+BY_PRESENCE_NECESSARY_MEMBERS = "по наличию необходимых членов"
+
+# по цели высказывания
+NARRATIVE = "повествовательные"
+INTERROGATIVE = "вопросительные"
+INCENTIVE = "побудительные"
+
+# по интонации
+EXCLAMATION = "восклицательные"
+NON_EXCLAMATION = "невосклицательные"
+
+# по количеству грамматических основ
+SIMPLE = "простые"
+COMPLEX = "сложные"
+
+# по виду связи в сложных предложениях
+COMPLEX_CCONJ = "ССП"
+COMPLEX_SCONJ = "СПП"
+COMPLEX_NON_CONJ = "БСП"
+COMPLEX_MIXED = "с разными видами связи"
+
+# по осложненности
+NOT_COMPLICATED = "не осложнено"
+HOMO_MEMBERS = "однородными членами"
+PRTF_GRND_PHRASES = "причастными/деепричастными оборотами"
+INTRO_WORDS = "вводными словами"
+VOCT_WORDS = "обращениями"
+
+# по строению грамматических основ
+TWO_PART = "двусоставные"
+ONE_PART = "односоставные"
+
+# по распространенности
+COMMON = "распространенные"
+NON_COMMON = "нераспространенные"
+
+# по наличию необходимых членов
+COMPLETE = "полные"
+INCOMPLETE = "неполные"
+
+# прочие метки
+VERBAL_NOUN = "verbal noun"
+VERBAL_NE_NOUN = "verbal ne-noun"
+NMOD_GENT = "nmod+gent"
+ABBR = "Abbr"
+ORGN = "Orgn"
+COMPLEX_COMPARE = "complex compare"
+WE = "личное местоимение 'мы'"
+PERSONAL = "личн.местоимения"
+IMPR_PLUR = "impr+plur"
+
+INVERSION = "инверсия"
+PARCELLATION = "парцелляция"
+PASSIVE = "страдательный залог"
+BEGIN_CONJ = "союз в начале"
+SENTENCE_WORD = "слово-предложение"
+SHORT = "слишком короткое"
+ANONYMOUS = "безличное предложение"
+MANY_CONJ = "много однородных членов"
+
+I = "личное местоимение 'я'"
+CASE_STRINGING = "нанизывание падежей"
+LONG = "слишком длинное"
+BUTTER_BUTTER = "неверная форма сравнительной степени"
