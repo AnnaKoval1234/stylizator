@@ -24,7 +24,9 @@
                         {% csrf_token %}
                         <label>{{ datetime }}</label>
                         <!-- Этот тег *должен* быть записан в одну строку -->
-                        <textarea name="text" class="form-control" placeholder="Введите текст">{{ textareatext }}</textarea>
+                        <textarea name="text" class="form-control" placeholder="Введите текст" maxlength="5000">
+                            {{ textareatext }}
+                        </textarea>
                         <button id="mainFormBtn" type="submit" class="btn btn-success mt-3">
                             <!-- span нужен для небольшого отступа от колеса загрузки -->
                             <span>Проверить</span>
